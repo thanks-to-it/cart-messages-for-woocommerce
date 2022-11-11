@@ -3,12 +3,12 @@
 Plugin Name: Cart Messages for WooCommerce
 Plugin URI: https://wpfactory.com/item/cart-messages-for-woocommerce/
 Description: Customize WooCommerce cart notices.
-Version: 1.3.0
-Author: Algoritmika Ltd
-Author URI: https://algoritmika.com
+Version: 1.4.0-dev
+Author: WPFactory
+Author URI: https://wpfactory.com
 Text Domain: cart-messages-for-woocommerce
 Domain Path: /langs
-WC tested up to: 5.2
+WC tested up to: 7.1
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -31,7 +31,7 @@ final class Alg_WC_Cart_Messages {
 	 * @var   string
 	 * @since 1.0.0
 	 */
-	public $version = '1.3.0';
+	public $version = '1.4.0-dev-20221111-2212';
 
 	/**
 	 * @var   Alg_WC_Cart_Messages The single instance of the class

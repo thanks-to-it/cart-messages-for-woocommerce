@@ -3,20 +3,31 @@ Contributors: wpcodefactory, algoritmika, anbinder
 Tags: woocommerce, cart, checkout, messages, notices, notifications, message, notice, notification, cart notices, cart messages, cart notifications, checkout notices, checkout messages, checkout notifications, woo commerce
 Requires at least: 4.4
 Tested up to: 6.1
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Customize WooCommerce cart notices.
+Add and customize WooCommerce cart and checkout notices.
 
 == Description ==
 
-**Cart Messages for WooCommerce** plugin lets you customize cart notices in WooCommerce.
+The **Cart Messages for WooCommerce** plugin lets you add and customize cart and checkout notices in WooCommerce.
 
-= More =
+### &#9989; Main Features ###
 
-* We are open to your suggestions and feedback.
-* Thank you for using or trying out one of our plugins!
+* Add custom notices to the **cart** page.
+* Add custom notices to the **checkout** page.
+* Customize **add to cart** notices.
+* Use the plugin's shortcodes in notices. For example, display the current cart total.
+* And more...
+
+### &#127942; Premium Version ###
+
+The free plugin version is limited to one notice on the cart page and one on the checkout page. [Cart Messages for WooCommerce Pro](https://wpfactory.com/item/cart-messages-for-woocommerce/) allows you to add an unlimited number of notices.
+
+### &#128472; Feedback ###
+
+* We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 * [Visit plugin site](https://wpfactory.com/item/cart-messages-for-woocommerce/).
 
 == Installation ==
@@ -27,7 +38,9 @@ Customize WooCommerce cart notices.
 
 == Changelog ==
 
-= 1.4.0 - 11/11/2022 =
+= 1.4.0 - 16/11/2022 =
+* Dev - Plugin is initialized on the `plugins_loaded` action now.
+* Dev - Code refactoring.
 * Tested up to: 6.1.
 * WC tested up to: 7.1.
 * Readme.txt updated.

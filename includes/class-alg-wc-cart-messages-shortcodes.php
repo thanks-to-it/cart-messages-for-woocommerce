@@ -20,7 +20,7 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 * @version 1.2.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (feature) add `[alg_wc_cm_countdown_timer]` (https://www.w3schools.com/howto/howto_js_countdown.asp)
+	 * @todo    (feature) add `[alg_wc_cm_countdown_timer]` (https://www.w3schools.com/howto/howto_js_countdown.asp)
 	 */
 	function __construct() {
 		// Cart
@@ -40,7 +40,7 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 * @version 1.2.0
 	 * @since   1.2.0
 	 *
-	 * @todo    [next] (feature) customizable glue
+	 * @todo    (feature) customizable glue
 	 */
 	function product_quantities( $atts, $content = '' ) {
 		if ( ! empty( $this->products_and_quantities ) ) {
@@ -54,7 +54,7 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 * @version 1.2.0
 	 * @since   1.2.0
 	 *
-	 * @todo    [next] (feature) customizable glue
+	 * @todo    (feature) customizable glue
 	 */
 	function product_titles( $atts, $content = '' ) {
 		if ( ! empty( $this->products_and_quantities ) ) {
@@ -68,7 +68,7 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 * @version 1.2.0
 	 * @since   1.2.0
 	 *
-	 * @todo    [next] (feature) optional function params
+	 * @todo    (feature) optional function params
 	 */
 	function cart_function( $atts, $content = '' ) {
 		if ( isset( $atts['name'] ) && is_callable( array( WC()->cart, $atts['name'] ) ) ) {
@@ -105,7 +105,7 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 * @version 1.2.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (feature) optional `max( $x, 0 )`
+	 * @todo    (feature) optional `max( $x, 0 )`
 	 */
 	function minus_cart_contents_total( $atts, $content = '' ) {
 		if ( isset( $atts['base'] ) ) {

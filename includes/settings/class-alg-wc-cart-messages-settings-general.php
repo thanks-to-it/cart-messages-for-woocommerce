@@ -130,8 +130,8 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 	 * @version 1.2.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (dev) split into separate sections
-	 * @todo    [next] (desc) better section descriptions
+	 * @todo    (dev) split into separate sections
+	 * @todo    (desc) better section descriptions
 	 */
 	function get_settings() {
 

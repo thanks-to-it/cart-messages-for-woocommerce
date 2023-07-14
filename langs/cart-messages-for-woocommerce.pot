@@ -1,19 +1,19 @@
-#: includes/class-alg-wc-cart-messages-core.php:123
+#: includes/class-alg-wc-cart-messages-core.php:132
 #, php-format
 msgid "%s has been added to your cart."
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages-core.php:125
+#: includes/class-alg-wc-cart-messages-core.php:134
 #, php-format
 msgctxt "Item name in quotes"
 msgid "&ldquo;%s&rdquo;"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages-core.php:142
+#: includes/class-alg-wc-cart-messages-core.php:151
 msgid "Continue shopping"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages-core.php:145
+#: includes/class-alg-wc-cart-messages-core.php:154
 msgid "View cart"
 msgstr ""
 

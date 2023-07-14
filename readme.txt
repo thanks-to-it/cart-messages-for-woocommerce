@@ -1,9 +1,9 @@
 === Cart Messages for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, cart, checkout, messages, notices, notifications, message, notice, notification, cart notices, cart messages, cart notifications, checkout notices, checkout messages, checkout notifications, woo commerce
 Requires at least: 4.4
 Tested up to: 6.2
-Stable tag: 1.4.1
+Stable tag: 1.5.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,6 +37,11 @@ The free plugin version is limited to one notice on the cart page and one on the
 3. Start by visiting plugin settings at "WooCommerce > Settings > Cart Messages".
 
 == Changelog ==
+
+= 1.5.0 - 14/07/2023 =
+* Fix - Priority lowered to `9` for both hooks (was `10`). Fixes the issue with duplicated notices on the checkout page, and no notices on the cart page.
+* Dev - `wc_has_notice()` check added.
+* Dev - Developers - `alg_wc_cart_messages_{$cart_or_checkout}_hook_name` and `alg_wc_cart_messages_{$cart_or_checkout}_hook_priority` filters added.
 
 = 1.4.1 - 19/06/2023 =
 * WC tested up to: 7.8.

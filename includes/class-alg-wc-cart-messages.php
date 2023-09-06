@@ -2,7 +2,7 @@
 /**
  * Cart Messages for WooCommerce - Main Class
  *
- * @version 1.4.0
+ * @version 1.5.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -49,7 +49,7 @@ final class Alg_WC_Cart_Messages {
 	/**
 	 * Alg_WC_Cart_Messages Constructor.
 	 *
-	 * @version 1.4.0
+	 * @version 1.5.1
 	 * @since   1.0.0
 	 *
 	 * @access  public
@@ -63,6 +63,9 @@ final class Alg_WC_Cart_Messages {
 
 		// Set up localisation
 		add_action( 'init', array( $this, 'localize' ) );
+
+		// Declare compatibility with custom order tables for WooCommerce
+		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
 
 		// Pro
 		if ( 'cart-messages-for-woocommerce-pro.php' === basename( ALG_WC_CART_MESSAGES_FILE ) ) {
@@ -87,6 +90,24 @@ final class Alg_WC_Cart_Messages {
 	 */
 	function localize() {
 		load_plugin_textdomain( 'cart-messages-for-woocommerce', false, dirname( plugin_basename( ALG_WC_CART_MESSAGES_FILE ) ) . '/langs/' );
+	}
+
+	/**
+	 * wc_declare_compatibility.
+	 *
+	 * @version 1.5.1
+	 * @since   1.5.1
+	 *
+	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 */
+	function wc_declare_compatibility() {
+		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			$files = ( defined( 'ALG_WC_CART_MESSAGES_FILE_FREE' ) ?
+				array( ALG_WC_CART_MESSAGES_FILE, ALG_WC_CART_MESSAGES_FILE_FREE ) : array( ALG_WC_CART_MESSAGES_FILE ) );
+			foreach ( $files as $file ) {
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $file, true );
+			}
+		}
 	}
 
 	/**

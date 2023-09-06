@@ -2,7 +2,7 @@
 /**
  * Cart Messages for WooCommerce - Shortcodes Class
  *
- * @version 1.2.0
+ * @version 1.5.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -23,15 +23,18 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 * @todo    (feature) add `[alg_wc_cm_countdown_timer]` (https://www.w3schools.com/howto/howto_js_countdown.asp)
 	 */
 	function __construct() {
+
 		// Cart
 		add_shortcode( 'alg_wc_cm_cart_contents_total',         array( $this, 'cart_contents_total' ) );
 		add_shortcode( 'alg_wc_cm_minus_cart_contents_total',   array( $this, 'minus_cart_contents_total' ) );
 		add_shortcode( 'alg_wc_cm_cart_contents_count',         array( $this, 'cart_contents_count' ) );
 		add_shortcode( 'alg_wc_cm_applied_coupons',             array( $this, 'cart_applied_coupons' ) );
 		add_shortcode( 'alg_wc_cm_cart_function',               array( $this, 'cart_function' ) );
+
 		// Other
 		add_shortcode( 'alg_wc_cm_product_titles',              array( $this, 'product_titles' ) );
 		add_shortcode( 'alg_wc_cm_product_quantities',          array( $this, 'product_quantities' ) );
+
 	}
 
 	/**
@@ -132,11 +135,11 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	/**
 	 * output.
 	 *
-	 * @version 1.2.0
+	 * @version 1.5.1
 	 * @since   1.0.0
 	 */
 	function output( $value, $atts ) {
-		return ( '' != $value ?
+		return ( ! empty( $value ) ?
 			( isset( $atts['before'] ) ? $atts['before'] : '' ) . $this->output_value( $value, $atts ) . ( isset( $atts['after'] ) ? $atts['after'] : '' ) :
 			( isset( $atts['on_empty'] ) ? '{{{on_empty}}}' . $atts['on_empty'] : '' ) );
 	}

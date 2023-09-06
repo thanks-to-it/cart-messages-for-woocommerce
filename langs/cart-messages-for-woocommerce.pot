@@ -17,11 +17,11 @@ msgstr ""
 msgid "View cart"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages.php:131
+#: includes/class-alg-wc-cart-messages.php:152
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages.php:134
+#: includes/class-alg-wc-cart-messages.php:155
 msgid "Go Pro"
 msgstr ""
 

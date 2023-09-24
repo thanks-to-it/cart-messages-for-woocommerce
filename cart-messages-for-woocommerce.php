@@ -3,12 +3,12 @@
 Plugin Name: Cart Messages for WooCommerce
 Plugin URI: https://wpfactory.com/item/cart-messages-for-woocommerce/
 Description: Add and customize WooCommerce cart and checkout notices.
-Version: 1.5.1
+Version: 1.5.2
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: cart-messages-for-woocommerce
 Domain Path: /langs
-WC tested up to: 8.0
+WC tested up to: 8.1
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -30,7 +30,7 @@ if ( 'cart-messages-for-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_CART_MESSAGES_VERSION' ) || define( 'ALG_WC_CART_MESSAGES_VERSION', '1.5.1' );
+defined( 'ALG_WC_CART_MESSAGES_VERSION' ) || define( 'ALG_WC_CART_MESSAGES_VERSION', '1.5.2' );
 
 defined( 'ALG_WC_CART_MESSAGES_FILE' ) || define( 'ALG_WC_CART_MESSAGES_FILE', __FILE__ );
 

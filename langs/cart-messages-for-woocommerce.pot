@@ -1,202 +1,202 @@
-#: includes/class-alg-wc-cart-messages-core.php:132
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\class-alg-wc-cart-messages-core.php:132
 #, php-format
 msgid "%s has been added to your cart."
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages-core.php:134
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\class-alg-wc-cart-messages-core.php:134
 #, php-format
 msgctxt "Item name in quotes"
 msgid "&ldquo;%s&rdquo;"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages-core.php:151
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\class-alg-wc-cart-messages-core.php:151
 msgid "Continue shopping"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages-core.php:154
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\class-alg-wc-cart-messages-core.php:154
 msgid "View cart"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages.php:152
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\class-alg-wc-cart-messages.php:152
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-cart-messages.php:155
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\class-alg-wc-cart-messages.php:155
 msgid "Go Pro"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:25
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:25
 msgid "General"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:36
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:36
 msgid "Cart"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:36
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:36
 msgid "Checkout"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:39
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:39
 #, php-format
 msgid "%s Messages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:40
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:183
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:40
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:183
 #, php-format
 msgid "Shortcodes: %s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:51
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:51
 #, php-format
 msgid "%s messages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:52
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:169
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:52
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:169
 msgid "Enable section"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:58
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:58
 msgid "Total number"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:61
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:61
 msgid ""
 "New settings fields will be displayed if you change this number and save "
 "changes."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:71
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:71
 #, php-format
 msgid "Message #%d"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:78
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:92
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:78
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:92
 msgid "Type"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:79
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:79
 msgid ""
 "Please note that \"error\" messages are always displayed first, \"success\" "
 "messages in the middle and \"notice\" messages are always displayed last."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:80
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:80
 msgid ""
 "Also please note that all \"error\" messages are merged into single section "
 "on frontend."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:86
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:99
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:86
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:99
 msgid "Notice"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:87
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:100
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:87
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:100
 msgid "Success"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:88
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:101
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:88
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:101
 msgid "Error"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:98
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:98
 msgid "No changes (i.e. same as \"Type\")"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:105
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:105
 msgid "Visibility"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:106
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:106
 #, php-format
 msgid "For URL param: %s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:112
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:112
 msgid "Always"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:113
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:113
 msgid "URL param"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:140
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:140
 msgid "Cart Messages Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:145
-#: includes/settings/class-alg-wc-cart-messages-settings.php:25
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:145
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings.php:25
 msgid "Cart Messages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:146
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:146
 msgid "Enable plugin"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:163
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:163
 msgid "Add to Cart Messages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:168
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:168
 msgid "Add to cart messages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:175
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:175
 msgid "Custom text"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:176
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:201
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:176
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:201
 msgid "Enable"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:177
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:177
 msgid "Custom add to cart message."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:192
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:192
 msgid "You can use shortcodes and/or HTML here."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:193
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:193
 msgid "If empty - no add to cart message will be displayed."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:200
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:200
 msgid "Product title by URL"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:202
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:202
 #, php-format
 msgid "Will get product title from %s parameter in URL."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings-general.php:203
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings-general.php:203
 msgid "If enabled - can override \"Custom text\" option."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings.php:42
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings.php:42
 msgid "Reset Settings"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings.php:47
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings.php:47
 msgid "Reset section settings"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings.php:48
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings.php:48
 msgid "Reset"
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings.php:49
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings.php:49
 msgid "Check the box and save changes to reset."
 msgstr ""
 
-#: includes/settings/class-alg-wc-cart-messages-settings.php:88
+#: E:\xampp\htdocs\wpfactory-local\wp-content\plugins\cart-messages-for-woocommerce-pro\includes\settings\class-alg-wc-cart-messages-settings.php:88
 msgid "Your settings have been reset."
 msgstr ""

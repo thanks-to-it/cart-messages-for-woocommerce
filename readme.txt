@@ -1,9 +1,9 @@
 === Cart Messages for WooCommerce ===
-Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, cart, checkout, messages, notices, notifications, message, notice, notification, cart notices, cart messages, cart notifications, checkout notices, checkout messages, checkout notifications, woo commerce
 Requires at least: 4.4
 Tested up to: 6.3
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,9 +42,13 @@ The free plugin version is limited to one notice on the cart page and one on the
 
 == Changelog ==
 
+= 1.5.3 - 13/10/2023 =
+* Dev - Developers - `alg_wc_cart_messages_{$cart_or_checkout}_add_notice` filters added.
+* WC tested up to: 8.2.
+
 = 1.5.2 - 24/09/2023 =
-* update plugin logo, banner
 * WC tested up to: 8.1.
+* Plugin logo, banner updated.
 
 = 1.5.1 - 06/09/2023 =
 * Fix - Shortcodes - `on_empty` in PHP v8.

@@ -2,7 +2,7 @@
 /**
  * Cart Messages for WooCommerce - Core Class
  *
- * @version 1.5.0
+ * @version 1.5.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -56,7 +56,7 @@ class Alg_WC_Cart_Messages_Core {
 	/**
 	 * add_notices.
 	 *
-	 * @version 1.5.0
+	 * @version 1.5.3
 	 * @since   1.0.0
 	 */
 	function add_notices( $cart_or_checkout ) {
@@ -68,6 +68,7 @@ class Alg_WC_Cart_Messages_Core {
 			$visibilities   = get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_message_visibilities',   array() );
 			foreach ( $messages as $i => $message ) {
 				if (
+					apply_filters( "alg_wc_cart_messages_{$cart_or_checkout}_add_notice", true, $i ) &&
 					'' != $message && '' != ( $message = do_shortcode( $message ) ) &&
 					(
 						! isset( $visibilities[ $i ] ) || 'always' === $visibilities[ $i ] ||

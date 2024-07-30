@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, cart, checkout, messages, notices, notifications, message, notice, notification, cart notices, cart messages, cart notifications, checkout notices, checkout messages, checkout notifications, woo commerce
 Requires at least: 4.4
-Tested up to: 6.3
-Stable tag: 1.5.3
+Tested up to: 6.5
+Stable tag: 1.5.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -41,6 +41,10 @@ The free plugin version is limited to one notice on the cart page and one on the
 3. Start by visiting plugin settings at "WooCommerce > Settings > Cart Messages".
 
 == Changelog ==
+
+= 1.5.4 - 30/07/2024 =
+* Tested up to: 6.5.
+* WC tested up to: 9.1.
 
 = 1.5.3 - 13/10/2023 =
 * Dev - Developers - `alg_wc_cart_messages_{$cart_or_checkout}_add_notice` filters added.

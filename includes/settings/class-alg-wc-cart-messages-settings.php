@@ -2,13 +2,13 @@
 /**
  * Cart Messages for WooCommerce - Settings
  *
- * @version 1.2.0
+ * @version 1.6.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Cart_Messages_Settings' ) ) :
 
@@ -17,16 +17,19 @@ class Alg_WC_Cart_Messages_Settings extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.2.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
 	function __construct() {
+
 		$this->id    = 'alg_wc_cart_messages';
 		$this->label = __( 'Cart Messages', 'cart-messages-for-woocommerce' );
 		parent::__construct();
+
 		// Sections
-		require_once( 'class-alg-wc-cart-messages-settings-section.php' );
-		require_once( 'class-alg-wc-cart-messages-settings-general.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-cart-messages-settings-section.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-cart-messages-settings-general.php';
+
 	}
 
 	/**
@@ -80,12 +83,13 @@ class Alg_WC_Cart_Messages_Settings extends WC_Settings_Page {
 	/**
 	 * admin_notices_settings_reset_success.
 	 *
-	 * @version 1.0.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
 	function admin_notices_settings_reset_success() {
 		echo '<div class="notice notice-success is-dismissible"><p><strong>' .
-			__( 'Your settings have been reset.', 'cart-messages-for-woocommerce' ) . '</strong></p></div>';
+			esc_html__( 'Your settings have been reset.', 'cart-messages-for-woocommerce' ) .
+		'</strong></p></div>';
 	}
 
 	/**

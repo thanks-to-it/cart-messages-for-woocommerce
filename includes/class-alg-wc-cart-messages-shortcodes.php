@@ -2,17 +2,25 @@
 /**
  * Cart Messages for WooCommerce - Shortcodes Class
  *
- * @version 1.5.1
+ * @version 1.6.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Cart_Messages_Shortcodes' ) ) :
 
 class Alg_WC_Cart_Messages_Shortcodes {
+
+	/**
+	 * products_and_quantities.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 */
+	public $products_and_quantities;
 
 	/**
 	 * Constructor.
@@ -25,15 +33,15 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	function __construct() {
 
 		// Cart
-		add_shortcode( 'alg_wc_cm_cart_contents_total',         array( $this, 'cart_contents_total' ) );
-		add_shortcode( 'alg_wc_cm_minus_cart_contents_total',   array( $this, 'minus_cart_contents_total' ) );
-		add_shortcode( 'alg_wc_cm_cart_contents_count',         array( $this, 'cart_contents_count' ) );
-		add_shortcode( 'alg_wc_cm_applied_coupons',             array( $this, 'cart_applied_coupons' ) );
-		add_shortcode( 'alg_wc_cm_cart_function',               array( $this, 'cart_function' ) );
+		add_shortcode( 'alg_wc_cm_cart_contents_total',       array( $this, 'cart_contents_total' ) );
+		add_shortcode( 'alg_wc_cm_minus_cart_contents_total', array( $this, 'minus_cart_contents_total' ) );
+		add_shortcode( 'alg_wc_cm_cart_contents_count',       array( $this, 'cart_contents_count' ) );
+		add_shortcode( 'alg_wc_cm_applied_coupons',           array( $this, 'cart_applied_coupons' ) );
+		add_shortcode( 'alg_wc_cm_cart_function',             array( $this, 'cart_function' ) );
 
 		// Other
-		add_shortcode( 'alg_wc_cm_product_titles',              array( $this, 'product_titles' ) );
-		add_shortcode( 'alg_wc_cm_product_quantities',          array( $this, 'product_quantities' ) );
+		add_shortcode( 'alg_wc_cm_product_titles',            array( $this, 'product_titles' ) );
+		add_shortcode( 'alg_wc_cm_product_quantities',        array( $this, 'product_quantities' ) );
 
 	}
 

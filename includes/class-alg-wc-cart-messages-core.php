@@ -2,22 +2,30 @@
 /**
  * Cart Messages for WooCommerce - Core Class
  *
- * @version 1.5.3
+ * @version 1.6.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Cart_Messages_Core' ) ) :
 
 class Alg_WC_Cart_Messages_Core {
 
 	/**
+	 * shortcodes.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 */
+	public $shortcodes;
+
+	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (feature) cart and checkout hooks: customizable (or at least check if current hooks are the best picks)
@@ -47,7 +55,7 @@ class Alg_WC_Cart_Messages_Core {
 			}
 
 			// Shortcodes
-			$this->shortcodes = require_once( 'class-alg-wc-cart-messages-shortcodes.php' );
+			$this->shortcodes = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-cart-messages-shortcodes.php';
 
 		}
 
@@ -72,7 +80,11 @@ class Alg_WC_Cart_Messages_Core {
 					'' != $message && '' != ( $message = do_shortcode( $message ) ) &&
 					(
 						! isset( $visibilities[ $i ] ) || 'always' === $visibilities[ $i ] ||
-						( 'url_param' === $visibilities[ $i ] && isset( $_GET[ 'alg-wc-' . $cart_or_checkout . '-message' ] ) && $i == intval( $_GET[ 'alg-wc-' . $cart_or_checkout . '-message' ] ) )
+						(
+							'url_param' === $visibilities[ $i ] &&
+							isset( $_GET[ 'alg-wc-' . $cart_or_checkout . '-message' ] ) && // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+							$i == intval( $_GET[ 'alg-wc-' . $cart_or_checkout . '-message' ] ) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						)
 					)
 				) {
 					$type = ( isset( $types[ $i ] ) ? $types[ $i ] : 'notice' );
@@ -124,15 +136,25 @@ class Alg_WC_Cart_Messages_Core {
 	/**
 	 * add_to_cart_message_html_by_url.
 	 *
-	 * @version 1.0.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
 	function add_to_cart_message_html_by_url( $message, $products, $show_qty ) {
-		if ( isset( $_GET['add-to-cart'] ) ) {
-			$product_id = sanitize_key( $_GET['add-to-cart'] );
-			$added_text = sprintf( __( '%s has been added to your cart.', 'woocommerce' ),
-				apply_filters( 'woocommerce_add_to_cart_item_name_in_quotes',
-					sprintf( _x( '&ldquo;%s&rdquo;', 'Item name in quotes', 'woocommerce' ), strip_tags( get_the_title( $product_id ) ) ), $product_id ) );
+		if ( isset( $_GET['add-to-cart'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$product_id = sanitize_key( $_GET['add-to-cart'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$added_text = sprintf(
+				/* Translators: %s: Item name in quotes. */
+				__( '%s has been added to your cart.', 'cart-messages-for-woocommerce' ),
+				apply_filters(
+					'woocommerce_add_to_cart_item_name_in_quotes',
+					sprintf(
+						/* Translators: %s: Item name. */
+						_x( '&ldquo;%s&rdquo;', 'Item name in quotes', 'woocommerce' ), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+						strip_tags( get_the_title( $product_id ) ) // phpcs:ignore WordPress.WP.AlternativeFunctions.strip_tags_strip_tags
+					),
+					$product_id
+				)
+			);
 			return $this->add_to_cart_message_html_get_success_message( $added_text );
 		}
 		return $message;
@@ -146,13 +168,27 @@ class Alg_WC_Cart_Messages_Core {
 	 */
 	function add_to_cart_message_html_get_success_message( $added_text ) {
 		if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
-			$return_to = apply_filters( 'woocommerce_continue_shopping_redirect', wc_get_raw_referer() ?
-				wp_validate_redirect( wc_get_raw_referer(), false ) : wc_get_page_permalink( 'shop' ) );
-			$message = sprintf( '<a href="%s" tabindex="1" class="button wc-forward">%s</a> %s',
-				esc_url( $return_to ), esc_html__( 'Continue shopping', 'woocommerce' ), esc_html( $added_text ) );
+			$return_to = apply_filters(
+				'woocommerce_continue_shopping_redirect',
+				(
+					wc_get_raw_referer() ?
+					wp_validate_redirect( wc_get_raw_referer(), false ) :
+					wc_get_page_permalink( 'shop' )
+				)
+			);
+			$message = sprintf(
+				'<a href="%s" tabindex="1" class="button wc-forward">%s</a> %s',
+				esc_url( $return_to ),
+				esc_html__( 'Continue shopping', 'woocommerce' ), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+				esc_html( $added_text )
+			);
 		} else {
-			$message = sprintf( '<a href="%s" tabindex="1" class="button wc-forward">%s</a> %s',
-				esc_url( wc_get_page_permalink( 'cart' ) ), esc_html__( 'View cart', 'woocommerce' ), esc_html( $added_text ) );
+			$message = sprintf(
+				'<a href="%s" tabindex="1" class="button wc-forward">%s</a> %s',
+				esc_url( wc_get_page_permalink( 'cart' ) ),
+				esc_html__( 'View cart', 'woocommerce' ), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+				esc_html( $added_text )
+			);
 		}
 		return $message;
 	}

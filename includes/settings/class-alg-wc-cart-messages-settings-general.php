@@ -2,13 +2,13 @@
 /**
  * Cart Messages for WooCommerce - General Section Settings
  *
- * @version 1.3.0
+ * @version 1.6.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Cart_Messages_Settings_General' ) ) :
 
@@ -29,26 +29,42 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 	/**
 	 * get_messages_settings.
 	 *
-	 * @version 1.3.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
 	function get_messages_settings( $cart_or_checkout ) {
-		$heading  = ( 'cart' === $cart_or_checkout ? __( 'Cart', 'cart-messages-for-woocommerce' ) : __( 'Checkout', 'cart-messages-for-woocommerce' ) );
+		$heading = (
+			'cart' === $cart_or_checkout ?
+			__( 'Cart', 'cart-messages-for-woocommerce' ) :
+			__( 'Checkout', 'cart-messages-for-woocommerce' )
+		);
 		$settings = array(
 			array(
-				'title'    => sprintf( __( '%s Messages', 'cart-messages-for-woocommerce' ), $heading ),
-				'desc'     => sprintf( __( 'Shortcodes: %s', 'cart-messages-for-woocommerce' ), '<code>' . implode( '</code>, <code>', array(
-					'[alg_wc_cm_cart_contents_total]',
-					'[alg_wc_cm_minus_cart_contents_total]',
-					'[alg_wc_cm_cart_contents_count]',
-					'[alg_wc_cm_applied_coupons]',
-					'[alg_wc_cm_cart_function]',
-				) ) . '</code>' ),
+				'title'    => sprintf(
+					/* Translators: %s: Section name. */
+					__( '%s Messages', 'cart-messages-for-woocommerce' ),
+					$heading
+				),
+				'desc'     => sprintf(
+					/* Translators: %s: Shortcode list. */
+					__( 'Shortcodes: %s', 'cart-messages-for-woocommerce' ),
+					'<code>' . implode( '</code>, <code>', array(
+						'[alg_wc_cm_cart_contents_total]',
+						'[alg_wc_cm_minus_cart_contents_total]',
+						'[alg_wc_cm_cart_contents_count]',
+						'[alg_wc_cm_applied_coupons]',
+						'[alg_wc_cm_cart_function]',
+					) ) . '</code>'
+				),
 				'type'     => 'title',
 				'id'       => 'alg_wc_cart_messages_' . $cart_or_checkout . '_options',
 			),
 			array(
-				'title'    => sprintf( __( '%s messages', 'cart-messages-for-woocommerce' ), $heading ),
+				'title'    => sprintf(
+					/* Translators: %s: Section name. */
+					__( '%s messages', 'cart-messages-for-woocommerce' ),
+					$heading
+				),
 				'desc'     => '<strong>' . __( 'Enable section', 'cart-messages-for-woocommerce' ) . '</strong>',
 				'id'       => 'alg_wc_cart_messages_' . $cart_or_checkout . '_section_enabled',
 				'default'  => 'no',
@@ -57,7 +73,7 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 			array(
 				'title'    => __( 'Total number', 'cart-messages-for-woocommerce' ),
 				'desc'     => apply_filters( 'alg_wc_cart_messages_settings',
-					'You will need <a href="https://wpfactory.com/item/cart-messages-for-woocommerce/" target="_blank">Cart Messages for WooCommerce Pro</a> plugin version to add more than one message.' ),
+					'You will need <a href="https://wpfactory.com/item/cart-messages-for-woocommerce/" target="_blank">Cart & Checkout Notices/Messages for WooCommerce Pro</a> plugin version to add more than one message.' ),
 				'desc_tip' => __( 'New settings fields will be displayed if you change this number and save changes.', 'cart-messages-for-woocommerce' ),
 				'id'       => 'alg_wc_cart_messages_' . $cart_or_checkout . '_message_total_number',
 				'default'  => 1,
@@ -68,7 +84,11 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_cart_messages_total_number', 1, $cart_or_checkout ); $i++ ) {
 			$settings = array_merge( $settings, array(
 				array(
-					'title'    => sprintf( __( 'Message #%d', 'cart-messages-for-woocommerce' ), $i ),
+					'title'    => sprintf(
+						/* Translators: %d: Message ID. */
+						__( 'Message #%d', 'cart-messages-for-woocommerce' ),
+						$i
+					),
 					'id'       => "alg_wc_cart_messages_{$cart_or_checkout}_messages[{$i}]",
 					'default'  => '',
 					'type'     => 'textarea',
@@ -95,7 +115,7 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 					'type'     => 'select',
 					'class'    => 'chosen_select',
 					'options'  => array(
-						'default' => __( 'No changes (i.e. same as "Type")', 'cart-messages-for-woocommerce' ),
+						'default' => __( 'No changes (i.e., same as "Type")', 'cart-messages-for-woocommerce' ),
 						'notice'  => __( 'Notice', 'cart-messages-for-woocommerce' ),
 						'success' => __( 'Success', 'cart-messages-for-woocommerce' ),
 						'error'   => __( 'Error', 'cart-messages-for-woocommerce' ),
@@ -103,7 +123,11 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 				),
 				array(
 					'desc'     => __( 'Visibility', 'cart-messages-for-woocommerce' ),
-					'desc_tip' => sprintf( __( 'For URL param: %s', 'cart-messages-for-woocommerce' ), "<br><em>/?alg-wc-{$cart_or_checkout}-message={$i}</em>" ),
+					'desc_tip' => sprintf(
+						/* Translators: %s: Parameter name. */
+						__( 'For URL param: %s', 'cart-messages-for-woocommerce' ),
+						"<br><em>/?alg-wc-{$cart_or_checkout}-message={$i}</em>"
+					),
 					'id'       => "alg_wc_cart_messages_{$cart_or_checkout}_message_visibilities[{$i}]",
 					'default'  => 'always',
 					'type'     => 'select',
@@ -180,15 +204,19 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 				'type'     => 'checkbox',
 			),
 			array(
-				'desc'     => sprintf( __( 'Shortcodes: %s', 'cart-messages-for-woocommerce' ), '<code>' . implode( '</code>, <code>', array(
-					'[alg_wc_cm_cart_contents_total]',
-					'[alg_wc_cm_minus_cart_contents_total]',
-					'[alg_wc_cm_cart_contents_count]',
-					'[alg_wc_cm_applied_coupons]',
-					'[alg_wc_cm_cart_function]',
-					'[alg_wc_cm_product_titles]',
-					'[alg_wc_cm_product_quantities]',
-				) ) . '</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %s: Shortcode list. */
+					__( 'Shortcodes: %s', 'cart-messages-for-woocommerce' ),
+					'<code>' . implode( '</code>, <code>', array(
+						'[alg_wc_cm_cart_contents_total]',
+						'[alg_wc_cm_minus_cart_contents_total]',
+						'[alg_wc_cm_cart_contents_count]',
+						'[alg_wc_cm_applied_coupons]',
+						'[alg_wc_cm_cart_function]',
+						'[alg_wc_cm_product_titles]',
+						'[alg_wc_cm_product_quantities]',
+					) ) . '</code>'
+				),
 				'desc_tip' => __( 'You can use shortcodes and/or HTML here.', 'cart-messages-for-woocommerce' ) . ' ' .
 					__( 'If empty - no add to cart message will be displayed.', 'cart-messages-for-woocommerce' ),
 				'id'       => 'alg_wc_cart_messages_add_to_cart_custom_text',
@@ -199,8 +227,14 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 			array(
 				'title'    => __( 'Product title by URL', 'cart-messages-for-woocommerce' ),
 				'desc'     => __( 'Enable', 'cart-messages-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'Will get product title from %s parameter in URL.', 'cart-messages-for-woocommerce' ), '<code>add-to-cart</code>' ) . ' ' .
-					__( 'If enabled - can override "Custom text" option.', 'cart-messages-for-woocommerce' ),
+				'desc_tip' => (
+					sprintf(
+						/* Translators: %s: Parameter name. */
+						__( 'Will get product title from %s parameter in URL.', 'cart-messages-for-woocommerce' ),
+						'<code>add-to-cart</code>'
+					) . ' ' .
+					__( 'If enabled - can override "Custom text" option.', 'cart-messages-for-woocommerce' )
+				),
 				'id'       => 'alg_wc_cart_messages_add_to_cart_by_url_enabled',
 				'default'  => 'no',
 				'type'     => 'checkbox',

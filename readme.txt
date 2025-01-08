@@ -1,9 +1,9 @@
-=== Cart Messages for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
-Tags: woocommerce, cart, checkout, messages, notices, notifications, message, notice, notification, cart notices, cart messages, cart notifications, checkout notices, checkout messages, checkout notifications, woo commerce
+=== Cart & Checkout Notices/Messages for WooCommerce ===
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
+Tags: woocommerce, cart, checkout, messages, notices
 Requires at least: 4.4
-Tested up to: 6.5
-Stable tag: 1.5.4
+Tested up to: 6.7
+Stable tag: 1.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ Add and customize WooCommerce cart and checkout notices.
 
 == Description ==
 
-The **Cart Messages for WooCommerce** plugin lets you add and customize cart and checkout notices in WooCommerce.
+The **Cart & Checkout Notices/Messages for WooCommerce** plugin lets you add and customize cart and checkout notices in WooCommerce.
 
 ### &#9989; Main Features ###
 
@@ -23,7 +23,7 @@ The **Cart Messages for WooCommerce** plugin lets you add and customize cart and
 
 ### &#127942; Premium Version ###
 
-The free plugin version is limited to one notice on the cart page and one on the checkout page. [Cart Messages for WooCommerce Pro](https://wpfactory.com/item/cart-messages-for-woocommerce/) allows you to add an unlimited number of notices.
+The free plugin version is limited to one notice on the cart page and one on the checkout page. [Cart & Checkout Notices/Messages for WooCommerce Pro](https://wpfactory.com/item/cart-messages-for-woocommerce/) allows you to add an unlimited number of notices.
 
 ### &#128472; Feedback ###
 
@@ -38,13 +38,26 @@ The free plugin version is limited to one notice on the cart page and one on the
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Start by visiting plugin settings at "WooCommerce > Settings > Cart Messages".
+3. Start by visiting plugin settings at "WPFactory > Cart Messages".
 
 == Changelog ==
 
-= 1.5.4 - 30/07/2024 =
+= 1.6.0 - 08/01/2025 =
+* Dev - Security - Output escaped.
+* Dev - PHP 8.2 compatibility - "Creation of dynamic property is deprecated" notice fixed.
+* Dev - Plugin settings moved to the "WPFactory" menu.
+* Dev - "Recommendations" added.
+* Dev - "Key Manager" added.
+* Dev - Code refactoring.
+* Dev - Coding standards improved.
+* Tested up to: 6.7.
+* WC tested up to: 9.5.
+* Plugin name updated.
+
+= 1.5.4 - 30/07/2023 =
 * Tested up to: 6.5.
 * WC tested up to: 9.1.
+* WooCommerce added to the "Requires Plugins" (plugin header).
 
 = 1.5.3 - 13/10/2023 =
 * Dev - Developers - `alg_wc_cart_messages_{$cart_or_checkout}_add_notice` filters added.
@@ -66,8 +79,8 @@ The free plugin version is limited to one notice on the cart page and one on the
 * Dev - Developers - `alg_wc_cart_messages_{$cart_or_checkout}_hook_name` and `alg_wc_cart_messages_{$cart_or_checkout}_hook_priority` filters added.
 
 = 1.4.1 - 19/06/2023 =
-* WC tested up to: 7.8.
 * Tested up to: 6.2.
+* WC tested up to: 7.8.
 
 = 1.4.0 - 16/11/2022 =
 * Dev - Plugin is initialized on the `plugins_loaded` action now.
@@ -86,20 +99,20 @@ The free plugin version is limited to one notice on the cart page and one on the
 * Dev - Shortcodes - `[alg_wc_cm_product_quantities]` shortcode added.
 * Dev - Shortcodes - `[alg_wc_cm_product_titles]` shortcode added.
 * Dev - Shortcodes - `[alg_wc_cm_cart_function]` shortcode added.
-* Dev - Shortcodes - `as_price` attribute removed; `format` attribute added (e.g. `format="wc_price"`).
+* Dev - Shortcodes - `as_price` attribute removed; `format` attribute added (e.g., `format="wc_price"`).
 * Dev - Localisation - `load_plugin_textdomain()` function moved to the `init` hook.
 * Dev - Settings - Properly sanitizing all message texts input now.
 * Dev - Settings - Descriptions updated.
 * Dev - Code refactoring.
-* WC tested up to: 5.1.
 * Tested up to: 5.7.
+* WC tested up to: 5.1.
 
 = 1.1.0 - 13/11/2019 =
 * Dev - Cart/Checkout Messages - "Visibility" options added.
 * Dev - Add to Cart Messages - "Custom text" options added.
 * Dev - Code refactoring.
-* WC tested up to: 3.8.
 * Tested up to: 5.3.
+* WC tested up to: 3.8.
 
 = 1.0.1 - 25/06/2019 =
 * Dev - Cart/Checkout Messages - "Type `on_empty`" options added.

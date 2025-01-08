@@ -1,15 +1,17 @@
 <?php
 /*
-Plugin Name: Cart Messages for WooCommerce
+Plugin Name: Cart & Checkout Notices/Messages for WooCommerce
 Plugin URI: https://wpfactory.com/item/cart-messages-for-woocommerce/
 Description: Add and customize WooCommerce cart and checkout notices.
-Version: 1.5.4
+Version: 1.6.0
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: cart-messages-for-woocommerce
 Domain Path: /langs
-WC tested up to: 9.1
+WC tested up to: 9.5
 Requires Plugins: woocommerce
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -31,11 +33,11 @@ if ( 'cart-messages-for-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_CART_MESSAGES_VERSION' ) || define( 'ALG_WC_CART_MESSAGES_VERSION', '1.5.4' );
+defined( 'ALG_WC_CART_MESSAGES_VERSION' ) || define( 'ALG_WC_CART_MESSAGES_VERSION', '1.6.0' );
 
 defined( 'ALG_WC_CART_MESSAGES_FILE' ) || define( 'ALG_WC_CART_MESSAGES_FILE', __FILE__ );
 
-require_once( 'includes/class-alg-wc-cart-messages.php' );
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-alg-wc-cart-messages.php';
 
 if ( ! function_exists( 'alg_wc_cart_messages' ) ) {
 	/**

@@ -54,7 +54,7 @@ The free plugin version is limited to one notice on the cart page and one on the
 * WC tested up to: 9.5.
 * Plugin name updated.
 
-= 1.5.4 - 30/07/2023 =
+= 1.5.4 - 30/07/2024 =
 * Tested up to: 6.5.
 * WC tested up to: 9.1.
 * WooCommerce added to the "Requires Plugins" (plugin header).

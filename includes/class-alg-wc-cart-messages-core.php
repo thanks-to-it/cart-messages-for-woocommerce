@@ -2,7 +2,7 @@
 /**
  * Cart Messages for WooCommerce - Core Class
  *
- * @version 1.6.0
+ * @version 2.0.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -25,51 +25,50 @@ class Alg_WC_Cart_Messages_Core {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.6.0
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (feature) cart and checkout hooks: customizable (or at least check if current hooks are the best picks)
 	 */
 	function __construct() {
 
-		if ( 'yes' === get_option( 'alg_wc_cart_messages_plugin_enabled', 'yes' ) ) {
-
-			// Cart & Checkout Messages
-			foreach ( array( 'cart', 'checkout' ) as $cart_or_checkout ) {
-				if ( 'yes' === get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_section_enabled', 'no' ) ) {
-					$hook_name = ( 'cart' === $cart_or_checkout ? 'woocommerce_before_cart' : 'woocommerce_before_checkout_form' );
-					$hook_name = apply_filters( "alg_wc_cart_messages_{$cart_or_checkout}_hook_name", $hook_name );
-					$priority  = apply_filters( "alg_wc_cart_messages_{$cart_or_checkout}_hook_priority", 9 );
-					add_action( $hook_name, array( $this, $cart_or_checkout . '_notices' ), $priority );
-				}
+		// Cart & Checkout Messages
+		foreach ( array( 'cart', 'checkout' ) as $cart_or_checkout ) {
+			if ( 'yes' === get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_section_enabled', 'no' ) ) {
+				$hook_name = ( 'cart' === $cart_or_checkout ? 'woocommerce_before_cart' : 'woocommerce_before_checkout_form' );
+				$hook_name = apply_filters( "alg_wc_cart_messages_{$cart_or_checkout}_hook_name", $hook_name );
+				$priority  = apply_filters( "alg_wc_cart_messages_{$cart_or_checkout}_hook_priority", 9 );
+				add_action( $hook_name, array( $this, $cart_or_checkout . '_notices' ), $priority );
 			}
-
-			// Add to Cart Messages
-			if ( 'yes' === get_option( 'alg_wc_cart_messages_add_to_cart_section_enabled', 'no' ) ) {
-				if ( 'yes' === get_option( 'alg_wc_cart_messages_add_to_cart_custom_enabled', 'no' ) ) {
-					add_filter( 'wc_add_to_cart_message_html', array( $this, 'add_to_cart_message_custom' ), PHP_INT_MAX, 3 );
-				}
-				if ( 'yes' === get_option( 'alg_wc_cart_messages_add_to_cart_by_url_enabled', 'no' ) ) {
-					add_filter( 'wc_add_to_cart_message_html', array( $this, 'add_to_cart_message_html_by_url' ), PHP_INT_MAX, 3 );
-				}
-			}
-
-			// Shortcodes
-			$this->shortcodes = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-cart-messages-shortcodes.php';
-
 		}
+
+		// Add to Cart Messages
+		if ( 'yes' === get_option( 'alg_wc_cart_messages_add_to_cart_section_enabled', 'no' ) ) {
+			if ( 'yes' === get_option( 'alg_wc_cart_messages_add_to_cart_custom_enabled', 'no' ) ) {
+				add_filter( 'wc_add_to_cart_message_html', array( $this, 'add_to_cart_message_custom' ), PHP_INT_MAX, 3 );
+			}
+			if ( 'yes' === get_option( 'alg_wc_cart_messages_add_to_cart_by_url_enabled', 'no' ) ) {
+				add_filter( 'wc_add_to_cart_message_html', array( $this, 'add_to_cart_message_html_by_url' ), PHP_INT_MAX, 3 );
+			}
+		}
+
+		// Shortcodes
+		$this->shortcodes = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-cart-messages-shortcodes.php';
 
 	}
 
 	/**
 	 * add_notices.
 	 *
-	 * @version 1.5.3
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 */
 	function add_notices( $cart_or_checkout ) {
 		$messages = get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_messages', array() );
-		if ( ! empty( $messages ) && 0 != ( $total_number = apply_filters( 'alg_wc_cart_messages_total_number', 1, $cart_or_checkout ) ) ) {
+		if (
+			! empty( $messages ) &&
+			0 != ( $total_number = get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_message_total_number', 1 ) )
+		) {
 			$messages       = array_slice( $messages, 0, $total_number, true );
 			$types          = get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_message_types',          array() );
 			$types_on_empty = get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_message_types_on_empty', array() );
@@ -90,7 +89,11 @@ class Alg_WC_Cart_Messages_Core {
 					$type = ( isset( $types[ $i ] ) ? $types[ $i ] : 'notice' );
 					if ( false !== strpos( $message, '{{{on_empty}}}' ) ) {
 						$message = str_replace( '{{{on_empty}}}', '', $message );
-						$type    = ( isset( $types_on_empty[ $i ] ) && 'default' != $types_on_empty[ $i ] ? $types_on_empty[ $i ] : $type );
+						$type    = (
+							isset( $types_on_empty[ $i ] ) && 'default' != $types_on_empty[ $i ] ?
+							$types_on_empty[ $i ] :
+							$type
+						);
 					}
 					if ( ! wc_has_notice( $message, $type ) ) {
 						wc_add_notice( $message, $type );

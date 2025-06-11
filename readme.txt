@@ -1,9 +1,9 @@
 === Cart & Checkout Notices/Messages for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
+Contributors: algoritmika, thankstoit, anbinder, karzin
 Tags: woocommerce, cart, checkout, messages, notices
 Requires at least: 4.4
-Tested up to: 6.7
-Stable tag: 1.6.0
+Tested up to: 6.8
+Stable tag: 2.0.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,7 +13,17 @@ Add and customize WooCommerce cart and checkout notices.
 
 The **Cart & Checkout Notices/Messages for WooCommerce** plugin lets you add and customize cart and checkout notices in WooCommerce.
 
-### &#9989; Main Features ###
+Enhance your WooCommerce store's communication with the "Cart & Checkout Notices/Messages for WooCommerce" plugin, a tool designed to help you add and personalize notices on cart and checkout pages.
+
+This plugin facilitates a richer shopping experience, allowing you to add custom messages to guide, inform, or update customers as they shop. Whether it is to encourage additional purchases, offer discounts, or provide information about shipping policies; a well-placed notice can make a world of difference.
+
+With the option to leverage the plugin's shortcodes in your notices, you can even display dynamic information such as the current cart total. This feature opens up possibilities for a wide range of creative and helpful notices, giving you the ability to craft messages that resonate with your customers and enhance their shopping experience.
+
+You can add an unlimited number of notices, giving you a robust tool to engage with your customers dynamically.
+
+Don't just stop at the basic notifications; unlock a plethora of opportunities to connect and communicate more effectively, fostering a responsive and informed shopping environment.
+
+### ✅ Main Features ###
 
 * Add custom notices to the **cart** page.
 * Add custom notices to the **checkout** page.
@@ -21,16 +31,12 @@ The **Cart & Checkout Notices/Messages for WooCommerce** plugin lets you add and
 * Use the plugin's shortcodes in notices. For example, display the current cart total.
 * And more...
 
-### &#127942; Premium Version ###
-
-The free plugin version is limited to one notice on the cart page and one on the checkout page. [Cart & Checkout Notices/Messages for WooCommerce Pro](https://wpfactory.com/item/cart-messages-for-woocommerce/) allows you to add an unlimited number of notices.
-
-### &#128472; Feedback ###
+### 🗘 Feedback ###
 
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
-* [Visit plugin site](https://wpfactory.com/item/cart-messages-for-woocommerce/).
+* Head to the plugin [GitHub Repository](https://github.com/thanks-to-it/cart-messages-for-woocommerce) to find out how you can pitch in.
 
-### &#8505; More ###
+### ℹ More ###
 
 * The plugin is **"High-Performance Order Storage (HPOS)"** compatible.
 
@@ -38,9 +44,18 @@ The free plugin version is limited to one notice on the cart page and one on the
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Start by visiting plugin settings at "WPFactory > Cart Messages".
+3. Start by visiting plugin settings at "WooCommerce > Settings > Cart Messages".
 
 == Changelog ==
+
+= 2.0.0 - 11/06/2025 =
+* Dev - Security - Shortcodes - `before`, `after` and `on_empty` attributes escaped.
+* Dev - The free plugin version now allows an unlimited number of notices.
+* Dev - Plugin settings moved back to the "WooCommerce > Settings" menu.
+* Dev - "Recommendations" removed.
+* Dev - "Key Manager" removed.
+* Tested up to: 6.8.
+* WC tested up to: 9.9.
 
 = 1.6.0 - 08/01/2025 =
 * Dev - Security - Output escaped.

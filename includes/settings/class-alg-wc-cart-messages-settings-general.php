@@ -2,7 +2,7 @@
 /**
  * Cart Messages for WooCommerce - General Section Settings
  *
- * @version 1.6.0
+ * @version 2.0.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 	/**
 	 * get_messages_settings.
 	 *
-	 * @version 1.6.0
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 */
 	function get_messages_settings( $cart_or_checkout ) {
@@ -72,16 +72,14 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 			),
 			array(
 				'title'    => __( 'Total number', 'cart-messages-for-woocommerce' ),
-				'desc'     => apply_filters( 'alg_wc_cart_messages_settings',
-					'You will need <a href="https://wpfactory.com/item/cart-messages-for-woocommerce/" target="_blank">Cart & Checkout Notices/Messages for WooCommerce Pro</a> plugin version to add more than one message.' ),
 				'desc_tip' => __( 'New settings fields will be displayed if you change this number and save changes.', 'cart-messages-for-woocommerce' ),
 				'id'       => 'alg_wc_cart_messages_' . $cart_or_checkout . '_message_total_number',
 				'default'  => 1,
 				'type'     => 'number',
-				'custom_attributes' => apply_filters( 'alg_wc_cart_messages_settings', array( 'readonly' => 'readonly' ), 'total_number' ),
 			),
 		);
-		for ( $i = 1; $i <= apply_filters( 'alg_wc_cart_messages_total_number', 1, $cart_or_checkout ); $i++ ) {
+		$total_number = get_option( 'alg_wc_cart_messages_' . $cart_or_checkout . '_message_total_number', 1 );
+		for ( $i = 1; $i <= $total_number; $i++ ) {
 			$settings = array_merge( $settings, array(
 				array(
 					'title'    => sprintf(
@@ -151,32 +149,13 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 	/**
 	 * get_settings.
 	 *
-	 * @version 1.2.0
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) split into separate sections
 	 * @todo    (desc) better section descriptions
 	 */
 	function get_settings() {
-
-		$plugin_settings = array(
-			array(
-				'title'    => __( 'Cart Messages Options', 'cart-messages-for-woocommerce' ),
-				'type'     => 'title',
-				'id'       => 'alg_wc_cart_messages_plugin_options',
-			),
-			array(
-				'title'    => __( 'Cart Messages', 'cart-messages-for-woocommerce' ),
-				'desc'     => '<strong>' . __( 'Enable plugin', 'cart-messages-for-woocommerce' ) . '</strong>',
-				'id'       => 'alg_wc_cart_messages_plugin_enabled',
-				'default'  => 'yes',
-				'type'     => 'checkbox',
-			),
-			array(
-				'type'     => 'sectionend',
-				'id'       => 'alg_wc_cart_messages_plugin_options',
-			),
-		);
 
 		$cart_settings     = $this->get_messages_settings( 'cart' );
 
@@ -245,7 +224,12 @@ class Alg_WC_Cart_Messages_Settings_General extends Alg_WC_Cart_Messages_Setting
 			),
 		);
 
-		return array_merge( $plugin_settings, $cart_settings, $checkout_settings, $add_to_cart_settings );
+		return array_merge(
+			$cart_settings,
+			$checkout_settings,
+			$add_to_cart_settings
+		);
+
 	}
 
 }

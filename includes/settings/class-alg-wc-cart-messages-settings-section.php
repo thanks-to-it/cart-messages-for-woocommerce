@@ -37,8 +37,15 @@ class Alg_WC_Cart_Messages_Settings_Section {
 	 * @since   1.0.0
 	 */
 	function __construct() {
-		add_filter( 'woocommerce_get_sections_alg_wc_cart_messages',              array( $this, 'settings_section' ) );
-		add_filter( 'woocommerce_get_settings_alg_wc_cart_messages_' . $this->id, array( $this, 'get_settings' ), PHP_INT_MAX );
+		add_filter(
+			'woocommerce_get_sections_alg_wc_cart_messages',
+			array( $this, 'settings_section' )
+		);
+		add_filter(
+			'woocommerce_get_settings_alg_wc_cart_messages_' . $this->id,
+			array( $this, 'get_settings' ),
+			PHP_INT_MAX
+		);
 	}
 
 	/**

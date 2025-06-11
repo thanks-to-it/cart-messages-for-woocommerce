@@ -2,7 +2,7 @@
 /**
  * Cart Messages for WooCommerce - Shortcodes Class
  *
- * @version 1.6.0
+ * @version 2.0.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -69,7 +69,10 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 */
 	function product_titles( $atts, $content = '' ) {
 		if ( ! empty( $this->products_and_quantities ) ) {
-			return implode( ', ', array_map( 'get_the_title', array_keys( $this->products_and_quantities ) ) );
+			return implode( ', ', array_map(
+				'get_the_title',
+				array_keys( $this->products_and_quantities )
+			) );
 		}
 	}
 
@@ -82,8 +85,14 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 * @todo    (feature) optional function params
 	 */
 	function cart_function( $atts, $content = '' ) {
-		if ( isset( $atts['name'] ) && is_callable( array( WC()->cart, $atts['name'] ) ) ) {
-			if ( isset( $atts['calculate_totals'] ) && filter_var( $atts['calculate_totals'], FILTER_VALIDATE_BOOLEAN ) ) {
+		if (
+			isset( $atts['name'] ) &&
+			is_callable( array( WC()->cart, $atts['name'] ) )
+		) {
+			if (
+				isset( $atts['calculate_totals'] ) &&
+				filter_var( $atts['calculate_totals'], FILTER_VALIDATE_BOOLEAN )
+			) {
 				WC()->cart->calculate_totals();
 			}
 			return $this->output( WC()->cart->{$atts['name']}(), $atts );
@@ -143,13 +152,19 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	/**
 	 * output.
 	 *
-	 * @version 1.5.1
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 */
 	function output( $value, $atts ) {
-		return ( ! empty( $value ) ?
-			( isset( $atts['before'] ) ? $atts['before'] : '' ) . $this->output_value( $value, $atts ) . ( isset( $atts['after'] ) ? $atts['after'] : '' ) :
-			( isset( $atts['on_empty'] ) ? '{{{on_empty}}}' . $atts['on_empty'] : '' ) );
+		return (
+			! empty( $value ) ?
+			(
+				( isset( $atts['before'] ) ? wp_kses_post( $atts['before'] ) : '' ) .
+				$this->output_value( $value, $atts ) .
+				( isset( $atts['after'] ) ? wp_kses_post( $atts['after'] ) : '' )
+			) :
+			( isset( $atts['on_empty'] ) ? '{{{on_empty}}}' . wp_kses_post( $atts['on_empty'] ) : '' )
+		);
 	}
 
 	/**
@@ -160,7 +175,11 @@ class Alg_WC_Cart_Messages_Shortcodes {
 	 */
 	function output_value( $value, $atts ) {
 		$value = ( isset( $atts['multiply_by'] ) ? $atts['multiply_by'] * $value : $value );
-		return ( isset( $atts['format'] ) && function_exists( $atts['format'] ) ? $atts['format']( $value ) : $value );
+		return (
+			isset( $atts['format'] ) && function_exists( $atts['format'] ) ?
+			$atts['format']( $value ) :
+			$value
+		);
 	}
 
 }

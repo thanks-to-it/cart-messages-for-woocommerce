@@ -3,7 +3,7 @@ Contributors: algoritmika, thankstoit, anbinder, karzin
 Tags: woocommerce, cart, checkout, messages, notices
 Requires at least: 4.4
 Tested up to: 6.8
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,6 +47,9 @@ Don't just stop at the basic notifications; unlock a plethora of opportunities t
 3. Start by visiting plugin settings at "WooCommerce > Settings > Cart Messages".
 
 == Changelog ==
+
+= 2.0.1 - 29/10/2025 =
+* WC tested up to: 10.3.
 
 = 2.0.0 - 11/06/2025 =
 * Dev - Security - Shortcodes - `before`, `after` and `on_empty` attributes escaped.
